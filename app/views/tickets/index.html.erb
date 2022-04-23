@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'HOME', sprints_path %>
+
+<h1>Tickets for sprint <%= @sprint.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th >Name</th>
+      <th >Description</th>
+      <th >State</th>
+      <th >Due_date</th>
+      <th >Overdued</th>
+      <th ></th>
+      <th ></th>
+      <th ></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td> <%= ticket.name %> </td>
+        <td> <%= ticket.description %> </td>
+        <td> <%= ticket.state %> </td>
+        <td> <%= ticket.due_date %> </td>
+        <td> <%= ticket.overdued %> </td>
+        <td><%= link_to 'Show', sprint_ticket_path(@sprint, ticket) %></td>
+        <td><%= link_to 'Edit', edit_sprint_ticket_path(@sprint, ticket) %></td>
+        <td><%= link_to 'Destroy', sprint_ticket_path(@sprint, ticket), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ticket', new_sprint_ticket_path(@sprint) %>

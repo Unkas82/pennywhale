@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<%= @ticket.name %>
+<p></p>
+<%= @ticket.description %>
+<p></p>
+<%= @ticket.state %>
+<p></p>
+<%= @ticket.due_date %>
+<p></p>
+
+
+<%= link_to 'Edit', edit_sprint_ticket_path(@sprint, @ticket) %> |
+<%= link_to 'Back', sprint_tickets_path %>

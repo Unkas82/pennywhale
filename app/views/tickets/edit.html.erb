@@ -1,0 +1,6 @@
+<h1>Editing Ticket</h1>
+
+<%= render 'form', ticket: @ticket, url: "/sprints/#{@sprint.id}/tickets/#{@ticket.id}" %>
+
+<%= link_to 'Show', sprint_ticket_path(@ticket) %> |
+<%= link_to 'Back', sprint_tickets_path %>

@@ -1,0 +1,8 @@
+<p>Hello, Sir! Some of our tickets have been overdued:</p>
+<ul>
+  <% @overdued_tickets.each do |ticket| %>
+    <li><%= link_to(ticket.name, sprint_ticket_url(ticket.sprint, ticket)) %></li>
+  <% end %>
+</ul>
+
+<p>Best regards, Pennywhale Team!</p>
