@@ -5,8 +5,9 @@
 #  id          :integer          not null, primary key
 #  name        :string
 #  description :text
+#  state       :integer          default("opened"), not null
 #  due_date    :date
-#  overdued    :boolean
+#  overdued    :boolean          default(FALSE)
 #  sprint_id   :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
